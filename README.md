@@ -1,13 +1,24 @@
-Welcome! 
+# Testing Rstudio as IDE
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+Here is a math align block:
 
-This template provides a skeleton file structure that you can edit to create your book. 
+\[\sqrt {{b^2} - 4ac} 
+% MathType!MTEF!2!1!+-
+% feaahGart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaOaaaeaaca
+% WGIbWaaWbaaSqabeaacaaIYaaaaOGaeyOeI0IaaGinaiaadggacaWG
+% Jbaaleqaaaaa!3B65!
+\]
 
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
-
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+Here is some inline \(x...n
+% MathType!MTEF!2!1!+-
+% feaahGart1ev3aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiEaiaac6
+% cacaGGUaGaaiOlaiaad6gaaaa!39FE!
+\) math
