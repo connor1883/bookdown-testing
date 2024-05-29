@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title> 2 Quantitative Variables in Finite Populations and Samples | A Minimal Book Example</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content=" 2 Quantitative Variables in Finite Populations and Samples | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content=" 2 Quantitative Variables in Finite Populations and Samples | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="John Doe" />
+
+
+<meta name="date" content="2024-05-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html"><i class="fa fa-check"></i><b>2</b> Quantitative Variables in Finite Populations and Samples</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#quantitative-variables-in-populations"><i class="fa fa-check"></i><b>2.1</b> QUANTITATIVE VARIABLES IN POPULATIONS</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#notation"><i class="fa fa-check"></i><b>2.1.1</b> <u>Notation</u></a></li>
+<li class="chapter" data-level="2.1.2" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-mean-of-a-qvar"><i class="fa fa-check"></i><b>2.1.2</b> <u>Definition: The population mean of a QVAR</u></a></li>
+<li class="chapter" data-level="2.1.3" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-a-deviation-from-the-population-mean-of-a-qvar-for-a-given-element"><i class="fa fa-check"></i><b>2.1.3</b> <u>Definition: A deviation from the population mean of a QVAR for a given element</u></a></li>
+<li class="chapter" data-level="2.1.4" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#fact"><i class="fa fa-check"></i><b>2.1.4</b> <u>Fact</u></a></li>
+<li class="chapter" data-level="2.1.5" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-mean-absolute-deviation-of-a-qvar"><i class="fa fa-check"></i><b>2.1.5</b> <u>Definition: The population mean absolute deviation of a QVAR</u></a></li>
+<li class="chapter" data-level="2.1.6" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-variance-of-a-qvar"><i class="fa fa-check"></i><b>2.1.6</b> <u>Definition: The population variance of a QVAR</u></a></li>
+<li class="chapter" data-level="2.1.7" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-standard-deviation-of-a-qvar"><i class="fa fa-check"></i><b>2.1.7</b> <u>Definition: The population standard deviation of a QVAR</u></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#ii.-quantitative-variables-in-samples"><i class="fa fa-check"></i><b>2.2</b> <strong>II. QUANTITATIVE VARIABLES IN SAMPLES</strong></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#notation-1"><i class="fa fa-check"></i><b>2.2.1</b> <u>Notation</u></a></li>
+<li class="chapter" data-level="2.2.2" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-mean-of-a-qvar"><i class="fa fa-check"></i><b>2.2.2</b> <u>Definition: The sample mean of a QVAR</u></a></li>
+<li class="chapter" data-level="2.2.3" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-a-deviation-from-the-sample-mean-of-a-qvar-for-a-given-observation"><i class="fa fa-check"></i><b>2.2.3</b> <u>Definition: A deviation from the sample mean of a QVAR for a given observation</u></a></li>
+<li class="chapter" data-level="2.2.4" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#fact-1"><i class="fa fa-check"></i><b>2.2.4</b> <u>Fact</u></a></li>
+<li class="chapter" data-level="2.2.5" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-mean-absolute-deviation-of-a-qvar"><i class="fa fa-check"></i><b>2.2.5</b> <u>Definition: The sample mean absolute deviation of a QVAR</u></a></li>
+<li class="chapter" data-level="2.2.6" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-variance-of-a-qvar"><i class="fa fa-check"></i><b>2.2.6</b> <u>Definition: The sample variance of a QVAR</u></a></li>
+<li class="chapter" data-level="2.2.7" data-path="quantitative-variables-in-finite-populations-and-samples.html"><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-standard-deviation-of-a-qvar"><i class="fa fa-check"></i><b>2.2.7</b> <u>Definition: The sample standard deviation of a QVAR</u></a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="quantitative-variables-in-finite-populations-and-samples" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number"> 2</span> Quantitative Variables in Finite Populations and Samples<a href="quantitative-variables-in-finite-populations-and-samples.html#quantitative-variables-in-finite-populations-and-samples" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Notation, Definitions, and Facts</p>
+<div id="quantitative-variables-in-populations" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> QUANTITATIVE VARIABLES IN POPULATIONS<a href="quantitative-variables-in-finite-populations-and-samples.html#quantitative-variables-in-populations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="notation" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> <u>Notation</u><a href="quantitative-variables-in-finite-populations-and-samples.html#notation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong><em>finite population</em></strong> consists of <span class="math inline">\(N\)</span> elements, labelled <span class="math inline">\(I = 1,...,N\)</span>, where <span class="math inline">\(N\)</span> is a real number.</p>
+<p><span class="math inline">\(X\)</span> is the name of a quantitative variable (QVAR).</p>
+<p>For <span class="math inline">\(I = 1,...,N\)</span>, <span class="math inline">\({X_I}\)</span> is the value of <span class="math inline">\(X\)</span> for elements <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="definition-the-population-mean-of-a-qvar" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> <u>Definition: The population mean of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-mean-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>population mean of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\({\mu _X}\)</span> , and defined as</p>
+<p><span class="math inline">\({\mu _X} = \frac{{\sum\limits_{I = 1}^N {{X_I}} }}{N}
+% MathType!MTEF!2!1!+-
+% feaahGart1ev3aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiVd02aaS
+% baaSqaaiaadIfaaeqaaOGaeyypa0ZaaSaaaeaadaaeWbqaaiaadIfa
+% daWgaaWcbaGaamysaaqabaaabaGaamysaiabg2da9iaaigdaaeaaca
+% WGobaaniabggHiLdaakeaacaWGobaaaaaa!4224!\)</span></p>
+</div>
+<div id="definition-a-deviation-from-the-population-mean-of-a-qvar-for-a-given-element" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> <u>Definition: A deviation from the population mean of a QVAR for a given element</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-a-deviation-from-the-population-mean-of-a-qvar-for-a-given-element" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong><em>deviation from the population mean of a QVAR</em></strong> <span class="math inline">\(X\)</span> <strong><em>for a given element</em></strong> is the difference between the value of <span class="math inline">\(X\)</span> for the given element and the population mean of <span class="math inline">\(X\)</span>. The deviation from the population mean of <span class="math inline">\(X\)</span> for element <span class="math inline">\(I\)</span>is represented by the symbol <span class="math inline">\({D_{{X_I}}}\)</span>:</p>
+<p><span class="math inline">\(% MathType!MTEF!2!1!+-
+% feaahGart1ev3aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+% aaleaacaWGybWaaSbaaWqaaiaadMeaaeqaaaWcbeaakiabg2da9iaa
+% dIfadaWgaaWcbaGaamysaaqabaGccqGHsislcqaH8oqBdaWgaaWcba
+% Gaamiwaaqabaaaaa!3F6D!\)</span></p>
+</div>
+<div id="fact" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> <u>Fact</u><a href="quantitative-variables-in-finite-populations-and-samples.html#fact" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For any finite population and any QVAR <span class="math inline">\(X\)</span>, if you find the deviation from the population mean of <span class="math inline">\(X\)</span> for every element in the population, and then add up all those deviations, you will find that the sum is zero.</p>
+<p>To put that more succinctly: for any finite population and any quantitative variable <span class="math inline">\(X\)</span>, the sum of the deviations from the means is always equal to 0.</p>
+<p>This is true no matter how many elements there are in the population and no matter what the values of <span class="math inline">\(X\)</span> are for the elements.</p>
+<p>More formally: Given a finite population consisting of any number <span class="math inline">\(N\)</span> of elements, and given any values <span class="math inline">\({X_1},\,{X_2},\,...,\,{X_N}\)</span> of a QVAR <span class="math inline">\(X\)</span>,</p>
+<p><span class="math display">\[\sum_{I=1}^N D_{X_I} = 0\]</span></p>
+<p>or equivalently,</p>
+<p><span class="math display">\[
+\sum_{I = 1}^N \left( X_I - \mu_X \right) = 0
+\]</span></p>
+<div id="proof-of-this-fact" class="section level4 hasAnchor" number="2.1.4.1">
+<h4><span class="header-section-number">2.1.4.1</span> <u>Proof of this fact</u><a href="quantitative-variables-in-finite-populations-and-samples.html#proof-of-this-fact" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can prove this equality through several steps of algebra.Every step is just a rearrangement of terms.</p>
+<p><span class="math display">\[\begin{array}{l}\sum\limits_{I = 1}^N {{D_{{X_I}}}}  = \sum\limits_{I = 1}^N {\left( {{X_I} - {\mu _X}} \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N {{X_I}}  - \sum\limits_{I = 1}^N {{\mu _X}} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{I = 1}^N {{X_I}}  - N{\mu _X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N\left( {\frac{{\sum\limits_{I = 1}^N {{X_I}} }}{N}} \right) - N{\mu _X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = N{\mu _X} - N{\mu _X}\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}
+% MathType!MTEF!2!1!+-
+% feaahGart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaadaaeWb
+% qaaiaadseadaWgaaWcbaGaamiwamaaBaaameaacaWGjbaabeaaaSqa
+% baaabaGaamysaiabg2da9iaaigdaaeaacaWGobaaniabggHiLdGccq
+% GH9aqpdaaeWbqaamaabmaabaGaamiwamaaBaaaleaacaWGjbaabeaa
+% kiabgkHiTiabeY7aTnaaBaaaleaacaWGybaabeaaaOGaayjkaiaawM
+% caaaWcbaGaamysaiabg2da9iaaigdaaeaacaWGobaaniabggHiLdaa
+% keaacaaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaG
+% PaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7cqGH
+% 9aqpdaaeWbqaaiaadIfadaWgaaWcbaGaamysaaqabaaabaGaamysai
+% abg2da9iaaigdaaeaacaWGobaaniabggHiLdGccqGHsisldaaeWbqa
+% aiabeY7aTnaaBaaaleaacaWGybaabeaaaeaacaWGjbGaeyypa0JaaG
+% ymaaqaaiaad6eaa0GaeyyeIuoaaOqaaiaaykW7caaMc8UaaGPaVlaa
+% ykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaG
+% PaVlaaykW7caaMc8UaaGPaVlabg2da9maaqahabaGaamiwamaaBaaa
+% leaacaWGjbaabeaaaeaacaWGjbGaeyypa0JaaGymaaqaaiaad6eaa0
+% GaeyyeIuoakiabgkHiTiaad6eacqaH8oqBdaWgaaWcbaGaamiwaaqa
+% baaakeaacaaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8
+% UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7
+% cqGH9aqpcaWGobWaaeWaaeaadaWcaaqaamaaqahabaGaamiwamaaBa
+% aaleaacaWGjbaabeaaaeaacaWGjbGaeyypa0JaaGymaaqaaiaad6ea
+% a0GaeyyeIuoaaOqaaiaad6eaaaaacaGLOaGaayzkaaGaeyOeI0Iaam
+% OtaiabeY7aTnaaBaaaleaacaWGybaabeaaaOqaaiaaykW7caaMc8Ua
+% aGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7ca
+% aMc8UaaGPaVlaaykW7caaMc8UaaGPaVlabg2da9iaad6eacqaH8oqB
+% daWgaaWcbaGaamiwaaqabaGccqGHsislcaWGobGaeqiVd02aaSbaaS
+% qaaiaadIfaaeqaaaGcbaGaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7
+% caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVl
+% aaykW7caaMc8Uaeyypa0JaaGimaaaaaa!FA15!
+\]</span></p>
+</div>
+</div>
+<div id="definition-the-population-mean-absolute-deviation-of-a-qvar" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> <u>Definition: The population mean absolute deviation of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-mean-absolute-deviation-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>population mean absolute deviation</em></strong> <strong><em>of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\(MA{D_X}\)</span>, and defined as</p>
+<p><span class="math display">\[MA{D_X} = \frac{{\sum\limits_{I = 1}^N {\left| {{X_I} - {\mu _X}} \right|} }}{N}
+% MathType!MTEF!2!1!+-
+% feaahGart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamytaiaadg
+% eacaWGebWaaSbaaSqaaiaadIfaaeqaaOGaeyypa0ZaaSaaaeaadaae
+% WbqaamaaemaabaGaamiwamaaBaaaleaacaWGjbaabeaakiabgkHiTi
+% abeY7aTnaaBaaaleaacaWGybaabeaaaOGaay5bSlaawIa7aaWcbaGa
+% amysaiabg2da9iaaigdaaeaacaWGobaaniabggHiLdaakeaacaWGob
+% aaaaaa!49BB!
+\]</span></p>
+</div>
+<div id="definition-the-population-variance-of-a-qvar" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> <u>Definition: The population variance of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-variance-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>population variance</em></strong> <strong><em>of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\(\sigma _X^2\)</span>, and defined as</p>
+<p><span class="math display">\[\sigma _X^2 = \frac{{\sum\limits_{I = 1}^N {{{\left( {{X_I} - {\mu _X}} \right)}^2}} }}{N}\]</span></p>
+</div>
+<div id="definition-the-population-standard-deviation-of-a-qvar" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> <u>Definition: The population standard deviation of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-population-standard-deviation-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>population standard deviation</em></strong> <strong><em>of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\({\sigma _X}\)</span>, and defined as</p>
+<p><span class="math display">\[{\sigma _X} = \sqrt[ + ]{{\sigma _X^2}}\]</span></p>
+</div>
+</div>
+<div id="ii.-quantitative-variables-in-samples" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> <strong>II. QUANTITATIVE VARIABLES IN SAMPLES</strong><a href="quantitative-variables-in-finite-populations-and-samples.html#ii.-quantitative-variables-in-samples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The notation we use for samples is different from the notation we use for populations.</p>
+<p>For some concepts, the definitions for samples are identical to the definitions for populations, and the only differences are in the notation.</p>
+<p>For other concepts, the differences are not only in the notation—the definitions for samples are similar, but not identical, to the definitions for populations.</p>
+<div id="notation-1" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> <u>Notation</u><a href="quantitative-variables-in-finite-populations-and-samples.html#notation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong><em>sample</em></strong> consists of <span class="math inline">\(n\)</span> observations, labelled <span class="math inline">\(i = 1,...,n\)</span>.</p>
+<p><span class="math inline">\(X\)</span> is the name of a quantitative variable.</p>
+<p>For <span class="math inline">\(i = 1,...,n\)</span>, <span class="math inline">\({x_i}\)</span> is the value of <span class="math inline">\(X\)</span> for observation <span class="math inline">\(i\)</span>.</p>
+</div>
+<div id="definition-the-sample-mean-of-a-qvar" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> <u>Definition: The sample mean of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-mean-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>sample mean of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\(\bar x\)</span> , and defined as</p>
+<p><span class="math inline">\(\bar x = \frac{{\sum\limits_{i = 1}^n {{x_i}} }}{n}\)</span></p>
+</div>
+<div id="definition-a-deviation-from-the-sample-mean-of-a-qvar-for-a-given-observation" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> <u>Definition: A deviation from the sample mean of a QVAR for a given observation</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-a-deviation-from-the-sample-mean-of-a-qvar-for-a-given-observation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong><em>deviation from the sample mean of a QVAR</em></strong> <span class="math inline">\(X\)</span> <strong><em>for a given observation</em></strong> is the difference between the value of <span class="math inline">\(X\)</span> for the given observation and the population mean of <span class="math inline">\(X\)</span>.The deviation from the sample mean of <span class="math inline">\(Q\)</span> for observation <span class="math inline">\(i\)</span> is represented by the symbol <span class="math inline">\({d_{{X_i}}}\)</span>:</p>
+<p><span class="math inline">\({d_{{X_i}}} = {x_i} - \bar x\)</span></p>
+</div>
+<div id="fact-1" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> <u>Fact</u><a href="quantitative-variables-in-finite-populations-and-samples.html#fact-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For every sample and any QVAR <span class="math inline">\(X\)</span>, if you find the deviation from the sample mean of <span class="math inline">\(X\)</span> for every observation in the sample, and then add up all those deviations, you will find that the sum is zero.</p>
+<p>To put that more succinctly: for any sample and any quantitative variable <span class="math inline">\(X\)</span>, the sum of the deviations from the means is always equal to 0.</p>
+<p>This is true no matter how many observations there are in the sample and no matter what the values of <span class="math inline">\(X\)</span> are for the observations.</p>
+<p>More formally: Given a sample consisting of any number <span class="math inline">\(n\)</span> of observations, and given any values <span class="math inline">\({x_1},\,{x_2},\,...,\,{x_n}\)</span> of a QVAR <span class="math inline">\(X\)</span>,</p>
+<p><span class="math display">\[\sum\limits_{i = 1}^n d_{X_i} = 0\]</span></p>
+<div id="proof-of-this-fact-1" class="section level4 hasAnchor" number="2.2.4.1">
+<h4><span class="header-section-number">2.2.4.1</span> <u>Proof of this fact</u><a href="quantitative-variables-in-finite-populations-and-samples.html#proof-of-this-fact-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can prove this equality through several steps of algebra. Every step is just a rearrangement of terms.</p>
+<p><span class="math display">\[\begin{array}{l}\sum\limits_{i = 1}^n {{d_{{X_i}}}}  = \sum\limits_{i = 1}^n {\left( {{x_i} - \bar x} \right)} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n {{x_i}}  - \sum\limits_{i = 1}^n {\bar x} \\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = \sum\limits_{i = 1}^n {{x_i}}  - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\left( {\frac{{\sum\limits_{i = 1}^n {{x_i}} }}{n}} \right) - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = n\bar x - n\bar x\\\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, = 0\end{array}
+% MathType!MTEF!2!1!+-
+% feaahGart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+% hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+% 4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq-Jc9
+% vqaqpepm0xbba9pwe9Q8fs0-yqaqpepae9pg0FirpepeKkFr0xfr-x
+% fr-xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaadaaeWb
+% qaaiaadsgadaWgaaWcbaGaamiwamaaBaaameaacaWGPbaabeaaaSqa
+% baaabaGaamyAaiabg2da9iaaigdaaeaacaWGUbaaniabggHiLdGccq
+% GH9aqpdaaeWbqaamaabmaabaGaamiEamaaBaaaleaacaWGPbaabeaa
+% kiabgkHiTiqadIhagaqeaaGaayjkaiaawMcaaaWcbaGaamyAaiabg2
+% da9iaaigdaaeaacaWGUbaaniabggHiLdaakeaacaaMc8UaaGPaVlaa
+% ykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaG
+% PaVlaaykW7caaMc8UaaGPaVlaaykW7cqGH9aqpdaaeWbqaaiaadIha
+% daWgaaWcbaGaamyAaaqabaaabaGaamyAaiabg2da9iaaigdaaeaaca
+% WGUbaaniabggHiLdGccqGHsisldaaeWbqaaiqadIhagaqeaaWcbaGa
+% amyAaiabg2da9iaaigdaaeaacaWGUbaaniabggHiLdaakeaacaaMc8
+% UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7
+% caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7cqGH9aqpdaaeWb
+% qaaiaadIhadaWgaaWcbaGaamyAaaqabaaabaGaamyAaiabg2da9iaa
+% igdaaeaacaWGUbaaniabggHiLdGccqGHsislcaWGUbGabmiEayaara
+% aabaGaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaa
+% ykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8Uaey
+% ypa0JaamOBamaabmaabaWaaSaaaeaadaaeWbqaaiaadIhadaWgaaWc
+% baGaamyAaaqabaaabaGaamyAaiabg2da9iaaigdaaeaacaWGUbaani
+% abggHiLdaakeaacaWGUbaaaaGaayjkaiaawMcaaiabgkHiTiaad6ga
+% ceWG4bGbaebaaeaacaaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaayk
+% W7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPa
+% VlaaykW7cqGH9aqpcaWGUbGabmiEayaaraGaeyOeI0IaamOBaiqadI
+% hagaqeaaqaaiaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaa
+% ykW7caaMc8UaaGPaVlaaykW7caaMc8UaaGPaVlaaykW7caaMc8UaaG
+% PaVlabg2da9iaaicdaaaaa!F372!
+\]</span></p>
+</div>
+</div>
+<div id="definition-the-sample-mean-absolute-deviation-of-a-qvar" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> <u>Definition: The sample mean absolute deviation of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-mean-absolute-deviation-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>sample mean absolute deviation</em></strong> <strong><em>of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\(ma{d_X}\)</span>, and defined as</p>
+<p><span class="math display">\[ma{d_X} = \frac{{\sum\limits_{i = 1}^n {\left| {{x_i} - \bar x} \right|} }}{{n - 1}}\]</span></p>
+</div>
+<div id="definition-the-sample-variance-of-a-qvar" class="section level3 hasAnchor" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> <u>Definition: The sample variance of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-variance-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>sample variance</em></strong> <strong><em>of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\(s_X^2\)</span>, and defined as</p>
+<p><span class="math display">\[s_X^2 = \frac{{\sum\limits_{i = 1}^n {{{\left( {{x_i} - \bar x} \right)}^2}} }}{{n - 1}}\]</span></p>
+</div>
+<div id="definition-the-sample-standard-deviation-of-a-qvar" class="section level3 hasAnchor" number="2.2.7">
+<h3><span class="header-section-number">2.2.7</span> <u>Definition: The sample standard deviation of a QVAR</u><a href="quantitative-variables-in-finite-populations-and-samples.html#definition-the-sample-standard-deviation-of-a-qvar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>sample standard deviation</em></strong> <strong><em>of a QVAR</em></strong> <span class="math inline">\(X\)</span> is represented by the symbol <span class="math inline">\({s_X}\)</span>, and defined as</p>
+<p><span class="math display">\[{s_X} = \sqrt[ + ]{{s_X^2}}\]</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/FirstPageTest.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
