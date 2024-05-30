@@ -1,3 +1,7 @@
+---
+title: QVARs in Finite Pop and Samples
+---
+
 # Quantitative Variables in Finite Populations and Samples
 
 Notation, Definitions, and Facts
