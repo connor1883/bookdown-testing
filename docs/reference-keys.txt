@@ -21,4 +21,3 @@ proof-of-this-fact-1
 definition-the-sample-mean-absolute-deviation-of-a-qvar
 definition-the-sample-variance-of-a-qvar
 definition-the-sample-standard-deviation-of-a-qvar
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
